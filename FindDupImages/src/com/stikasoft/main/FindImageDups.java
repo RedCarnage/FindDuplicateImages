@@ -59,7 +59,6 @@ public class FindImageDups {
 	private String directoryToMoveFilesTo = "";
 	
 	
-	
 	public static void main(String[] args) {
 		FindImageDups program = new FindImageDups();
 		
@@ -67,7 +66,13 @@ public class FindImageDups {
 		
 	}
 
-	//Main code of the program.
+	/**
+	 * start
+	 * 
+	 * main code of the app.
+	 * 
+	 * @param args
+	 */
 	private void start(String[] args) {
 		if(args.length>0) {
 			if(processArgs(args)) {
