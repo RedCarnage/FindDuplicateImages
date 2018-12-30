@@ -25,7 +25,7 @@ import com.stikasoft.imageutils.ImageUtils;
  * Find duplicate Images in the current directory or sub directories.
  * It will output a list of duplicate names. use the -m option to move the duplicates to a directory.
  * 
- *  * 
+ * 
  */
 public class FindImageDups {
 
@@ -302,6 +302,7 @@ public class FindImageDups {
 	private void findDupsImages() {
 		File startDir = new File(directoryToSearch);
 
+		//Make sure the directory exists.
 		if(startDir.exists() && startDir.isDirectory()) {
 			System.out.printf("Searching for dups in directory %s\nUsing distance %d\n",  directoryToSearch, imageDistance);
 			if(!directoryToMoveFilesTo.isEmpty()) {
@@ -313,6 +314,7 @@ public class FindImageDups {
 			return;
 		}
 		
+		//Count the number of images in the ddirectorys
 		crawlImageDirectory(file->totalImages++);
 		System.out.println("totalImages To check = " + totalImages);
 
@@ -337,8 +339,6 @@ public class FindImageDups {
     		printProgressBar(currentImageNum, totalImages);
     		addHashToList(file.getAbsolutePath(), imageDHashString);
     	}
-		
-		
 	}
 
 	/**
